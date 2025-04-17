@@ -45,7 +45,7 @@ export class NotesComponent {
   }
 
 
-  dialogEditNote(event: Event): boolean {
+  dialogCreateNote(event: Event): boolean {
     event.preventDefault();
     this.editing = { id: 0, title: '', content: '', tag: null };
     return false;
@@ -89,7 +89,6 @@ export class NotesComponent {
         tag: this.editing.tag
       };
       this.storageService.createNote(newNote);
-      this.notes.push(newNote);
     } else 
     {
       const idx = this.notes.findIndex(n => n.id === this.editing!.id);

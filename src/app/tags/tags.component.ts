@@ -101,7 +101,6 @@ export class TagsComponent
         color: tagColor,
       };
       this.storageService.createTag(newTag);
-      this.tags.push(newTag);
     } else 
     {
       const idx = this.tags.findIndex(t => t.id === this.editing!.id);

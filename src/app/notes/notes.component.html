@@ -1,6 +1,6 @@
 <input type="text" id="search" name="searchTerm" placeholder="Rechercher une note..." [(ngModel)]="searchTerm" />
 
-<a href="#" (click)="dialogEditNote($event)">Créer une note</a>
+<a href="#" (click)="dialogCreateNote($event)">Créer une note</a>
 
 <ul>
   <li *ngFor="let note of filteredNotes" (dblclick)="dialogModifyNote(note, $event)">
