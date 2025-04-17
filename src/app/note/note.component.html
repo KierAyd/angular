@@ -1,0 +1,5 @@
+<div class="main-content" id="mainContent">
+    <h2>{{ title() || 'Aucune note sélectionnée' }}</h2>
+<p>{{ content() || 'Sélectionnez une note pour afficher son contenu...' }}</p>
+<p class="tagg" *ngIf="tag()">Tag : {{ tag() }}</p>
+  </div>

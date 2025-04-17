@@ -1,0 +1,14 @@
+<div class="app-container">
+    <app-notes (noteSelected)="onNoteSelected($event)"></app-notes>
+    
+    <app-note 
+      [id]="selectedNote?.id || 0" 
+      [title]="selectedNote?.title || ''" 
+      [content]="selectedNote?.content || ''" 
+      [tag]="selectedNote?.tag?.name || null">
+    </app-note>
+  </div>
+
+
+
+

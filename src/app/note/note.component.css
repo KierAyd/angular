@@ -1,0 +1,17 @@
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 1.2em;
+    color: #555;
+  }
+
+  .tagg{
+    margin-bottom: 10px;
+    color: black;
+  }

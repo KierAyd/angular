@@ -1,0 +1,41 @@
+<input type="text" id="search" name="searchTerm" placeholder="Rechercher une note..." [(ngModel)]="searchTerm" />
+
+<a href="#" (click)="dialogEditNote($event)">Créer une note</a>
+
+<ul>
+  <li *ngFor="let note of filteredNotes" (dblclick)="dialogModifyNote(note, $event)">
+
+    <span class="note-title" (click)="selectNote(note, $event)">{{ note.title }}</span>
+
+    <button class="delete-btn" (click)="deleteNote(note, $event)">Supprimer</button>
+  </li>
+</ul>
+
+<div class="note-hint">
+  Cliquez sur le titre pour afficher la note, double-cliquez pour la modifier.
+</div>
+
+
+<div *ngIf="editing as edit" class="note-form">
+  <form (ngSubmit)="onSubmitForm()">
+    <div>
+      <label for="title">Titre :</label>
+      <input type="text" id="title" name="title" [(ngModel)]="edit.title" required>
+    </div>
+    <div>
+      <label for="content">Contenu :</label>
+      <textarea id="content" name="content" [(ngModel)]="edit.content" rows="4"></textarea>
+    </div>
+    <div>
+      <label for="tag">Tag :</label>
+      <select id="tag" name="tag" [(ngModel)]="edit.tag">
+
+        <option [ngValue]="null">Aucun</option>
+
+        <option *ngFor="let t of availableTags" [ngValue]="t">{{ t.name }}</option>
+      </select>
+    </div>
+    <button type="submit">Valider</button>
+    <button type="button" (click)="cancelEditing()">Annuler</button>
+  </form>
+</div>
